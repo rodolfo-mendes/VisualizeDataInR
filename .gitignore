@@ -1,0 +1,13 @@
+#Image types
+*.jpg
+*.png
+*.gif
+*.pdf
+
+#output types
+*.html
+
+#history and data files
+.RData
+.Rhistory
+.Rproj.user/

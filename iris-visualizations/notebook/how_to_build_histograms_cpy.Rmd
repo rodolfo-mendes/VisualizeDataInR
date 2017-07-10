@@ -1,0 +1,77 @@
+---
+title: "How to Build Histograms with R"
+output:
+  html_document: default
+  html_notebook: default
+---
+
+The histogram is one of the simplest and most useful data visualization tools.
+Given a continous variable, it shows how its values are distributed along their
+range. By visualizing the histogram, we can identify in a glimpse if a variable
+is uniformly distributed or if a specific range of values concentrate most of
+the ocurrences.
+
+In this post, I am going to show how to build a histogram using the R basic
+graph library. As example, we are going to use the Iris dataset, composed by 4
+numeric attributes and a category attribute. We're going to build a histogram
+for each one of its numeric attributes and explore some functionalities of the
+R basic graphs system. 
+
+We start our analysis by taking a quick look at some lines of the dataset and
+summarizing the dataset:
+
+```{r}
+head(iris, n=10)
+summary(iris)
+```
+
+
+The four attributes which represents the characteristics of the data instances
+are continoues real numbers. In the summary we can observe the range of their
+values, their mean and other position parameters. The category attribute is a
+factor, and we observe that that dataset instances are equaly divided between
+the three possible categories.
+
+So, let's build our first histogram. We choose the attribute "Sepal.Length" to
+begin:
+
+```{r}
+hist(iris$Sepal.Length)
+```
+
+And that's it! All you need to do is to call the function **hist** passing your 
+data as argument and your histogram is ready. The **hist** function plots a 
+histogram using default values for graphs and automatically calculates the
+ranges of X and Y axes as well as the width, height and number of the bars.
+Although the default behavior of the **hist** function provides us with a good
+visualization of our data, we can easily customize this behavior to better fit
+our needs. In the next subsections, we are going to explore some of the many
+possibilities of customization of the histogram.
+
+##Adding colors to the bars
+
+In order to be effective, data visualization must be pleasant. Let's be honest,
+nobody would pay attention to a bunch of lines, so coloring your histograms is
+essential! In order to fill the histogram bars with colors we must add the 
+**col** parameter in the **hist** function call:
+
+```{R}
+
+```
+
+
+##How to label the bars
+
+By viewing the histogram produced in the previous section we can observe that
+nearly 30 instances of data have a Sepal Length between 5.5 and 6. But we would
+like to know the exact count for this interval without appealing to a auxiliar
+table. How can we achieve this ? By setting the **labels** parameter, let's
+see:
+
+```{R}
+hist(iris$Sepal.Length, labels = T)
+```
+
+
+
+

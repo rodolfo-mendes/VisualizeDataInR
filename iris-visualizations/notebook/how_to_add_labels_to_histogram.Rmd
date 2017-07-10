@@ -1,0 +1,40 @@
+---
+title: "How to add labels to a histogram"
+output: html_notebook
+---
+
+In previous posts we learned how to build a basic histogram, using the default
+plot settings of R and then we learned how to add colors to the bars of our
+histogram. Let's quickly review these steps, so you don't have to read theses 
+posts by now. In order to build a simple histogram all we have to do is to call
+the **hist()** function passing our data as argument. If we want to add some
+color to the histogram color we must pass a color name (or RGB
+hexadecimal code) as argument to the **col** parameter:
+
+```{R}
+hist(iris$Sepal.Length, col = '#BBDEFB')
+```
+
+By observing the produced histogram we conclude that about 30 instances have
+the Sepal Length attribute between 6 and 6.5. We also conclude that the ranges
+[4,4.5), [7,7.5) and [7.5,8) have about 5 instances of data each. However these
+conclusions are approximations, and we would like to know the exact number of 
+instances for each range without the help of an auxiliar table.
+
+The solution to this problem is simply add labels to each bar of the histogram. 
+This is easily obtained by passing a TRUE value as argument to the **labels**
+parameter of the **hist()** function:
+
+```{R}
+hist(iris$Sepal.Length, col = '#BBDEFB', labels = TRUE, ylim=c(0,35))
+```
+
+Now on top of each bar there is a label indicating the exact number of instances
+of each range of the attribute Sepal Length. We observe that between 6 and 6.5 
+we have 31 instances in fact, while the ranges [4,4.5), [7,7.5) and [7.5,8) have 
+5,6 and 6 instances respectively.
+
+//TODO
+- write how to rename x and y axis
+- write how to add a title
+- write how to add a subtitle
