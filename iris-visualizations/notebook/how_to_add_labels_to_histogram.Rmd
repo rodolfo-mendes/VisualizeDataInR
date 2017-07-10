@@ -34,7 +34,71 @@ of each range of the attribute Sepal Length. We observe that between 6 and 6.5
 we have 31 instances in fact, while the ranges [4,4.5), [7,7.5) and [7.5,8) have 
 5,6 and 6 instances respectively.
 
-//TODO
-- write how to rename x and y axis
-- write how to add a title
-- write how to add a subtitle
+Besides the bars labels, we can also set custom labels for the histogram axis.
+Observe that the horizontal axis is labeled with the name of the variable that
+contains the data. This is not a problem when the variable name exactly matches
+its content, but this is not true most of time. For example, we could assigned
+the Sepal Length values to a variable named 'x', and the result would be like 
+this:
+
+```{R}
+x <- iris$Sepal.Length
+hist(x, col = '#BBDEFB', labels = TRUE, ylim=c(0,35))
+```
+
+Observe that by changing the name of the data variable we altered both the
+horizontal axis label as well as the title of the plot, and that is the kind 
+of behaviour that we want to avoid.
+
+So let's define a custom name for the horizontal axis so it does not change
+with the data variable name. This is done by setting a character value for
+the **xlab** parameter when calling the **hist()** function:
+
+```{R}
+x <- iris$Sepal.Length
+hist(
+  x,
+  col = '#BBDEFB',
+  labels = TRUE,
+  xlab = 'Sepal Length',
+  ylim=c(0,35)
+)
+```
+
+Similarly we can also define a custom label for the vertical axis using the 
+**ylab** parameter:
+
+```{R}
+x <- iris$Sepal.Length
+hist(
+  x,
+  col = '#BBDEFB',
+  labels = TRUE,
+  xlab = 'Sepal Length',
+  ylab = 'Number of Plants',
+  ylim=c(0,35)
+)
+```
+
+Finally, we can define custom title and subtitle for our histogram using 
+the paramters **title** and **sub**:
+
+```{R}
+x <- iris$Sepal.Length
+hist(
+  x,
+  col = '#BBDEFB',
+  labels = TRUE,
+  xlab = 'Sepal Length',
+  ylab = 'Number of Plants',
+  main = 'Sepal Length Distribution',
+  sub = 'Histogram of Sepal Length',
+  ylim=c(0,35)
+)
+```
+
+And we are done! In this post we learned how can we customize the labels texts
+of our histogram. This is a very useful feature because the audience of our
+visualization may not be familiar with the dataset attribute names or techinical
+terms of statistics. Therefore, by applying custom labels and titles we can
+improve our communication by making the meaning of data clearer.
