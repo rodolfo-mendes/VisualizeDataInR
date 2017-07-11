@@ -97,7 +97,7 @@ hist(
 )
 ```
 
-And we are done! In this post we learned how can we customize the labels texts
+And we're done! In this post we learned how can we customize the labels texts
 of our histogram. This is a very useful feature because the audience of our
 visualization may not be familiar with the dataset attribute names or techinical
 terms of statistics. Therefore, by applying custom labels and titles we can
