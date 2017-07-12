@@ -1,18 +1,24 @@
 ---
-title: "How to change the size of bins in a histogram"
+title: "How to change the numbers of bins in a histogram"
 output: html_notebook
 ---
 
 In the post [How to build a histogram in R]() we learned that, based on our
 data, the **hist()** function automatically calculates the size of each bin of
-the histogram. However we may find the default bin size does not offer
+the histogram. However we may find the default number of bins does not offer
 sufficient details of our distribution. Or we may want to summarize the details
 of the distribution by grouping one or more range values. So in order to perform
-this adequation we can change the size of the bins to better satisfy our needs. 
+this adequation we can change the number of the bins to better satisfy our
+needs.
 
+So let's start with a simple histogram of the Petal.Length attribute of the iris 
+dataset:
 
 ```{r}
-plot(cars)
+hist(iris$Petal.Length, col = 'skyblue3')
 ```
 
+Observe that we have a very unbalanced distribution, including an empty bin in
+range [2,2.5]. Maybe if we group these intervals we could get a better
+visualization.
 
