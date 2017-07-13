@@ -1,0 +1,20 @@
+Exploratory data analysis/data visualization:
+
+Articles:
+* http://vita.had.co.nz/papers/layered-grammar.pdf
+
+Books:
+* Graphical Methods For Data Analysis, John M. Chambers
+* Storytelling with Data: A Data Visualization Guide for Business Professionals
+* Effective Data Visualization: The Right Chart for the Right Data
+* Good Charts: The HBR Guide to Making Smarter, More Persuasive Data Visualizations
+* Data Visualization: a successful design process
+* R Graphics Cookbook: Practical Recipes for Visualizing Data
+* The Art of Data Science, Roger D. Peng
+* Exploratory Data Analysis with R
+* Mastering Software Development in R
+
+Courses:
+* https://www.coursera.org/learn/r-data-visualization
+* https://www.coursera.org/learn/exploratory-data-analysis
+* https://www.coursera.org/learn/data-products
