@@ -1,4 +1,7 @@
-Exploratory data analysis/data visualization:
+---
+title: "Data Science Study Roadmap"
+output: html_notebook
+---
 
 READING:
 * Exploratory Data Analysis with R

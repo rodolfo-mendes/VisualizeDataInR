@@ -1,0 +1,135 @@
+---
+title: "How to build a scatterplot in R"
+author: "Rodolfo Mendes"
+date: "15 de julho de 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+**intro paragraph**
+
+The scatterplot is a very simple and intuitive chart. It shows a dataset as a 
+collection of points over a Cartesian plane where each axis represents an 
+attribute of the dataset. Using the scatterplot we can easily obtain useful
+insights about the relationship of the attributes of our data. To mention a few
+of them:we can visualize if these attributes are correlated, if there are
+clusters or if it is possible to define a curve separating groups of points.
+
+In order to build a scatterplot in R all we have to do is to pass a pair of
+arrays to the **plot()** function. Once more, we are using the **Iris dataset**
+as example:
+
+```{R}
+plot(iris$Sepal.Length, iris$Sepal.Width)
+```
+
+The first argument passed to the function corresponds to X-axis coordinates,
+while the second argument corresponds to the Y-axis coordinates. The arrays
+passed to the **plot()** function must have the same size, otherwise we will
+get an error. We also must grant that the coordinates of a point must
+occupy the same position in their respective arrays.
+
+We can apply a lot of customizations on the base scatterplot in order to make it
+more clear and attractive. Let's start by setting a title and the axis labels
+of our scatterplot:
+
+```{R}
+plot(
+  iris$Sepal.Length,
+  iris$Sepal.Width,
+  xlab='Sepal Length',
+  ylab='Sepal Width',
+  main = 'Sepal Length x Sepal Width'
+  )
+```
+
+We also can change the color of the markers to make our scatterplot more
+attractive by using the **col** parameter:
+
+```{R}
+plot(
+  iris$Sepal.Length,
+  iris$Sepal.Width,
+  xlab='Sepal Length',
+  ylab='Sepal Width',
+  main = 'Sepal Length x Sepal Width',
+  col='red'
+  )
+```
+
+But wait a minute ... Why only the borders of the markers were colored ? Well,
+this seems a little odd at first, but it's a normal behaviour. The base
+scatterplot offers various options of markers to be used, and the default marker
+is not filled at all. In order to use filled dots as markers we have to
+set the **pch** parameter when calling the **plot()** function:
+
+```{R}
+plot(
+  iris$Sepal.Length,
+  iris$Sepal.Width,
+  xlab='Sepal Length',
+  ylab='Sepal Width',
+  main = 'Sepal Length x Sepal Width',
+  col='red',
+  pch = 16
+  )
+```
+
+Finally, we can add a third dimension to our scatterplot by using colors to 
+distinguish points belonging to a class or category. So, let's take a quick 
+look at the **Iris dataset**:
+
+```{R}
+head(iris, n=5)
+summary(iris$Species)
+```
+
+Each sample of an iris plant belong to one of three possible species: setosa, 
+versicolor or virginica. In the scatterplot, we can visualize how these
+categories are distributed over the sepal width x length relationship by
+assigning a different color to each point on the chart in accord to their class.
+This is done by passing the vector of classes as argument to the **col**
+parameter:
+
+```{R}
+plot(
+  iris$Sepal.Length,
+  iris$Sepal.Width,
+  xlab='Sepal Length',
+  ylab='Sepal Width',
+  main = 'Sepal Length x Sepal Width',
+  col=iris$Species,
+  pch = 16
+  )
+```
+
+By assigning a color to each class we can easily observe that instances colored
+in black forms a separate group of data. This kind of insight is very helpful
+when we are building predictive models for example, because it indicates which
+attributes are good candidates to be included as input in the model. Finally,
+let's add a legend so we can identify which species each color represents:
+
+```{R}
+plot(
+  iris$Sepal.Length,
+  iris$Sepal.Width,
+  xlab='Sepal Length',
+  ylab='Sepal Width',
+  main = 'Sepal Length x Sepal Width',
+  col=iris$Species,
+  pch = 16
+  )
+
+legend('topright',legend=unique(iris$Species), col=palette()[1:3], pch=16)
+```
+
+And that's it! In this post we learned how to create a simple scatterplot
+using two input arrays and how can we customize its appearence. We also learned
+that we can use colors to represent a third dimension in the scatterplot, and
+get insights of how a class attribute is distributed among input variables. So 
+if you have any question or suggestion don't hesitate in comenting the post.
+

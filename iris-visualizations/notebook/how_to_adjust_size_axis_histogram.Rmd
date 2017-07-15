@@ -1,0 +1,25 @@
+---
+title: "How to scale a histogram"
+output: html_notebook
+---
+
+Hi again! We already have learned how to build a simple histogram, add colors
+to it and how to customize its labels. In the case you haven't learned yet, just 
+follow the links [How to build a histogram in R][1],
+[How to add colors to the histogram][2] and
+[How to add labels to the histogram][3].
+
+```{r}
+plot(cars)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by
+pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be
+saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to
+preview the HTML file).
+
+[1]: https://visualizedatainr.wordpress.com/2017/07/07/how-to-build-a-histogram-in-r/
+[2]: https://visualizedatainr.wordpress.com/2017/07/08/how-to-add-colors-to-the-histogram/
+[3]: https://visualizedatainr.wordpress.com/2017/07/08/how-to-add-colors-to-the-histogram/

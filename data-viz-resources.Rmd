@@ -1,4 +1,4 @@
-Exploratory data analysis/data visualization:
+# Data science study roadmap
 
 READING:
 * Exploratory Data Analysis with R

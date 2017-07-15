@@ -1,0 +1,8 @@
+name: Publish Document
+title:
+account: rpubs
+server: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/291013/b9e0ca040de64be4b064549194be7889
+bundleId: https://api.rpubs.com/api/v1/document/291013/b9e0ca040de64be4b064549194be7889
+url: http://rpubs.com/rodolfo_mendes/291013
+when: 1499913446.28873

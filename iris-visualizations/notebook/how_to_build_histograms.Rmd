@@ -48,3 +48,5 @@ visualization of our data, we can easily customize this behavior to better fit
 our needs. In future posts, we are going to explore some of the many
 possibilities of customization of the histogram.
 
+
+

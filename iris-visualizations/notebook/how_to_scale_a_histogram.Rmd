@@ -1,0 +1,45 @@
+---
+title: "How to scale a histogram"
+output: html_notebook
+---
+
+Hi again! We already have learned how to build a simple histogram, add colors
+to it and how to customize its labels. In the case you haven't learned yet, just 
+follow the links [How to build a histogram in R][1],
+[How to add colors to the histogram][2] and
+[How to add labels to the histogram][3]. In this post
+we are going to learn how to scale histogram variable and how to show relative
+frequencies instead of absolute ones.
+
+In exploratory data analysis we often have to compare histograms of different
+variables with very different range of values. The iris dataset offers a good
+example to us:
+
+```{r}
+summary(iris)
+```
+
+We observe that the Sepal.Length attribute varies in the range [4.3,7.9],
+while the Petal.Width attribute varies in the range [0.1,2.5]. Let's plot their
+histograms and compare:
+
+```{R}
+hist(iris$Sepal.Length, col = '#C8E6C9')
+hist(iris$Petal.Width, col = '#FFE0B2')
+```
+
+```{R}
+hist(scale(iris$Sepal.Length), col = '#C8E6C9')
+hist(scale(iris$Petal.Width), col = '#FFE0B2')
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by
+pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be
+saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to
+preview the HTML file).
+
+[1]: https://visualizedatainr.wordpress.com/2017/07/07/how-to-build-a-histogram-in-r/
+[2]: https://visualizedatainr.wordpress.com/2017/07/08/how-to-add-colors-to-the-histogram/
+[3]: https://visualizedatainr.wordpress.com/2017/07/08/how-to-add-colors-to-the-histogram/

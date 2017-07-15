@@ -19,6 +19,44 @@ hist(iris$Petal.Length, col = 'skyblue3')
 ```
 
 Observe that we have a very unbalanced distribution, including an empty bin in
-range [2,2.5]. Maybe if we group these intervals we could get a better
-visualization.
+range [2,2.5]. One possible approach to improve this visualization is to group
+these intervals by reducing the number of bins in the histogram. This can be 
+done using the **breaks** parameter of the **hist()** function:
+
+```{R}
+hist(iris$Petal.Length, col = 'skyblue3', breaks = 6)
+```
+
+When we specify the number of bins using the **breaks** parameter, the new size
+of each bin is automatically calculated by the **hist()** to a **pretty**
+value. In other words, when we specify the **breaks** parameter as a single
+integer value the resulting size of each bin must be 1,2 or 5 times a multiple
+of 10. On the contrary, the **hist()** function will compute the number of 
+bins as close as possible of the specified value of **breaks**.
+
+Another possibility is to pass a number vector to the **breaks** parameter, so
+that we can set an arbitrary number of bins of arbitrary sizes:
+
+```{R}
+hist(
+  iris$Petal.Length,
+  col = 'skyblue3',
+  breaks = c(1,1.3,2,4,5,7))
+```
+
+In this case each bin assumed different sizes accordingly to the vector passed
+as argument to the **breaks** parameter. However, this option forces the
+histogram to use density probabilities in order to keep the proportion
+of the bars areas.
+
+These were the 2 simplest ways of defining the bin sizes or breaks of a
+histogram. In future posts we are goin to explore the another 3 options suppoted
+by the **breaks** paramter to define the bins sizes:
+
+* a function that returns the number of bins 
+* a function that returns a vector of breaks
+* a string indicating the algorithm used to calculate the number of bins. The
+options are: "Sturges" (default), "Scott" and "FD".
+
+Powered by [HOW TO VISUALIZE DATA IN R](https://visualizedatainr.wordpress.com/)
 

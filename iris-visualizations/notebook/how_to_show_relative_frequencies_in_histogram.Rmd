@@ -1,0 +1,38 @@
+---
+title: "How to show relative frequencies in a histogram"
+output: html_notebook
+---
+
+Often we want to visualize the frequencies of our histogram in relative terms
+rather than absolute numbers. This feature is specially useful when we don't
+know the size of our dataset or when we want to compare histograms of samples of
+different sizes. In this post we are going to learn how to show in the histogram
+the relative frequencies of the distribution.
+
+First, let's take a look on the absolute frequencies of the Petal
+Length attribute of the Iris dataset: 
+
+```{r}
+hist(iris$Petal.Length, col = '#FFE0B2', ylim=c(0,40), labels = TRUE)
+```
+
+In this plot we can observe the exact count of samples in each bin of the 
+histogram. But if instead of the exact count, we would like to know how much
+of the total each bar represents ?
+
+We have two options to achieve this result. The first one is to set the
+parameter **freq** to **FALSE**:
+
+```{r}
+hist(
+  scale(iris$Petal.Length),
+  col = '#FFE0B2',
+  labels = TRUE,
+  freq = FALSE
+)
+```
+
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
